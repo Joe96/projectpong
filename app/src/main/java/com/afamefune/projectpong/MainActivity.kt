@@ -1,42 +1,62 @@
 package com.afamefune.projectpong
 
 import android.os.Bundle
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.ListView
+import android.widget.GridView
 import android.widget.Toast
+import android.widget.Toolbar
+import com.afamefune.projectpong.adapters.VideoGameAdapter
+import com.afamefune.projectpong.viewmodel.VideoGame
 
-class MainActivity : AppCompatActivity() {
+
+class MainActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
+
+    private var arrayList:ArrayList<VideoGame> ? = null
+    private var gridView:GridView ? = null
+    private var videoGameAdapter: VideoGameAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setSupportActionBar(findViewById(R.id.toolbar))
 
-        // creates array list of month from array found in strings.xml
-        val language:Array<String> = resources.getStringArray(R.array.month_list)
-        val arrayAdapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, language)
+        gridView = findViewById(R.id.grid_view)
+        arrayList = ArrayList()
+        arrayList = setDataList()
+        videoGameAdapter = VideoGameAdapter(applicationContext, arrayList!!)
 
-        val listView = findViewById<ListView>(R.id.list_view)
-        listView.adapter = arrayAdapter
-        listView.onItemClickListener = AdapterView.OnItemClickListener { adapterView, view, position, id ->
-            val selectedItem = adapterView.getItemAtPosition(position) as String
-            val itemIdAtPos = adapterView.getItemIdAtPosition(position)
+        gridView?.adapter = videoGameAdapter
+        gridView?.onItemClickListener = this
 
-            Toast.makeText(applicationContext,"click item $selectedItem its position $itemIdAtPos",Toast.LENGTH_SHORT).show()
-        }
+    }
 
+    private fun setDataList() : ArrayList<VideoGame> {
+
+        var arrayList: ArrayList<VideoGame> = ArrayList()
+
+        arrayList.add(VideoGame("Biomutant",R.mipmap.ic_launcher,"05-25-2021"))
+        arrayList.add(VideoGame("Ratchet & Clank: Rift Apart",R.mipmap.ic_launcher,"06-11-2021"))
+        arrayList.add(VideoGame("Monster Hunter Stories 2: Wings of Ruin",R.mipmap.ic_launcher,"07-09-2021"))
+        arrayList.add(VideoGame("The Legend of Zelda: Skyward Sword HD",R.mipmap.ic_launcher,"07-16-2021"))
+        arrayList.add(VideoGame("Kena: Bridge of Spirits",R.mipmap.ic_launcher,"08-24-2021"))
+        arrayList.add(VideoGame("Stray",R.mipmap.ic_launcher,"10-31-2021"))
+
+
+        return arrayList
+    }
+    override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+        var items: VideoGame = arrayList!!.get(position)
+        Toast.makeText(applicationContext, items.title, Toast.LENGTH_LONG).show()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.menu_main, menu)
         return true
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -46,6 +66,11 @@ class MainActivity : AppCompatActivity() {
         return when (item.itemId) {
             R.id.action_settings -> true
             else -> super.onOptionsItemSelected(item)
+
         }
+
     }
+
+
+
 }

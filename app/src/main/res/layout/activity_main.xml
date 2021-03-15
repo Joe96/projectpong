@@ -21,12 +21,13 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <ListView
-        android:id="@+id/list_view"
+    <GridView
+        android:id="@+id/grid_view"
+        android:numColumns="2"
         android:background="@color/list_view_color"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    </ListView>
+    </GridView>
 
 </LinearLayout>
