@@ -22,9 +22,9 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <GridView
-        android:id="@+id/grid_view"
+        android:id="@+id/gridView"
         android:numColumns="2"
-        android:background="@color/list_view_color"
+        android:background="@color/grid_color"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
