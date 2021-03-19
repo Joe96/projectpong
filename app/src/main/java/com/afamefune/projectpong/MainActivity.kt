@@ -1,5 +1,6 @@
 package com.afamefune.projectpong
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
@@ -8,7 +9,6 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.GridView
 import android.widget.Toast
-import android.widget.Toolbar
 import com.afamefune.projectpong.adapters.VideoGameAdapter
 import com.afamefune.projectpong.viewmodel.VideoGame
 
@@ -23,7 +23,8 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        gridView = findViewById(R.id.grid_view)
+        // Inits gridview, array, and adapter
+        gridView = findViewById(R.id.gridView)
         arrayList = ArrayList()
         arrayList = setDataList()
         videoGameAdapter = VideoGameAdapter(applicationContext, arrayList!!)
@@ -33,6 +34,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
 
     }
 
+    // Populate array with mock data
     private fun setDataList() : ArrayList<VideoGame> {
 
         var arrayList: ArrayList<VideoGame> = ArrayList()
@@ -47,9 +49,16 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
 
         return arrayList
     }
+
+    // Sets click listener on the items in the gridview.
     override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
         var items: VideoGame = arrayList!!.get(position)
-        Toast.makeText(applicationContext, items.title, Toast.LENGTH_LONG).show()
+        // Sets toast message when item is clicked
+        Toast.makeText(applicationContext, items.title, Toast.LENGTH_SHORT).show()
+        // Intent opens detailed activity when item is clicked
+        val intent = Intent(this, DetailedActivity::class.java)
+        intent.putExtra("position", position)
+        this.startActivity(intent)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -70,7 +79,5 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
         }
 
     }
-
-
 
 }

@@ -7,7 +7,8 @@
     <color name="orange_700">#FA701A</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="list_view_color">#F2F2F2</color>
+    <color name="grid_color">#D9D9D9</color>
     <color name="detailed_list_view_color">#919191</color>
+    <color name="release_date_color">#D11141</color>
 
 </resources>

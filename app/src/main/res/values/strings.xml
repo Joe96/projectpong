@@ -26,4 +26,8 @@
 
     </string-array>
 
+    <string name="title_activity_detailed">DetailedActivity</string>
+
+    <string name="first_fragment_mock_data">Video game data coming soon, stay tuned!</string>
+
 </resources>
