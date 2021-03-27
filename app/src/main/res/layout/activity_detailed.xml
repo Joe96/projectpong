@@ -1,54 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/grid_color"
-    tools:context=".DetailedActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".DetailedActivity">
 
-        <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/appBarLayout"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="250dp">
+
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
-                <com.google.android.material.appbar.CollapsingToolbarLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="250dp"
-                    android:background="@color/yellow_200"
-                    app:layout_scrollFlags="scroll|exitUntilCollapsed"
-                    app:layout_scrollInterpolator="@android:anim/decelerate_interpolator">
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="250dp"
+                android:layout_height="200dp"
+                android:layout_toRightOf="@id/icon"
+                android:paddingTop="25dp"
+                android:text="@string/title"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/release_date"
+                android:layout_width="250dp"
+                android:layout_height="25dp"
+                android:layout_below="@id/title"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/icon"
+                android:text="@string/release_date"
+                android:textAlignment="center"
+                android:textColor="@color/release_date_color" />
 
 
-                </com.google.android.material.appbar.CollapsingToolbarLayout>
+            <ImageView
+                android:id="@+id/icon"
+                android:layout_width="175dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                app:srcCompat="@mipmap/ic_launcher" />
+
+        </RelativeLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
 
 
-        </com.google.android.material.appbar.AppBarLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <androidx.core.widget.NestedScrollView
+        <TextView
+            android:id="@+id/detailed_platform"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:clipToPadding="false"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/detailed_platform"
+            android:textColor="@color/black" />
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/detailed_about"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_below="@id/detailed_platform"
+            android:layout_marginTop="5dp"
+            android:text="@string/detailed_about"
+            android:textAlignment="center"
+            android:textColor="@color/black" />
 
-                        <TextView
-                            android:id="@+id/text"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/first_fragment_mock_data"
-                            app:layout_constraintCircleRadius="0dp"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.5"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"/>
+        <TextView
+            android:id="@+id/detailed_publisher"
+            android:layout_width="100dp"
+            android:layout_height="25dp"
+            android:layout_below="@id/detailed_about"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/detailed_publisher"
+            android:textColor="@color/black" />
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/detailed_genre"
+            android:layout_width="175dp"
+            android:layout_height="25dp"
+            android:layout_below="@id/detailed_about"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@id/detailed_publisher"
+            android:text="@string/detailed_genre"
+            android:textAlignment="center"
+            android:textColor="@color/black" />
 
-        </androidx.core.widget.NestedScrollView>
+        <TextView
+            android:id="@+id/detailed_esrb_rating"
+            android:layout_width="100dp"
+            android:layout_height="25dp"
+            android:layout_below="@id/detailed_about"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@id/detailed_genre"
+            android:text="@string/detailed_esrb_rating"
+            android:textAlignment="center"
+            android:textColor="@color/black" />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

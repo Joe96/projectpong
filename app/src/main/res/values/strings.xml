@@ -28,6 +28,13 @@
 
     <string name="title_activity_detailed">DetailedActivity</string>
 
-    <string name="first_fragment_mock_data">Video game data coming soon, stay tuned!</string>
+    <string name="icon">Video game data coming soon, stay tuned!</string>
+    <string name="detailed_esrb_rating">E</string>
+    <string name="detailed_about">The Legend of Zelda: Skyward Sword game soars onto Nintendo Switch!  Take to the skies, draw your sword, and experience the earliest story in the Legend of Zelda series. Join Link in his high-flying quest to save Zelda, a childhood friend who must confront her destiny. Soar between floating islands and descend to the treacherous surface world in this updated HD version of the Legend of Zelda: Skyward Sword.  Master realistic swordplay that matches your movements Swing your sword and angle your slashes to uncover and break through opponents’ defenses using intuitive motion controls. Link will match the angle of each strike you make with the Joy-Con controller, creating immersive swordplay that relies on strategy and accuracy. Movements feel smoother and more immediate thanks to the Nintendo Switch system’s increased processing power and HD graphics. Take advantage of the newly-added button only control scheme—perfect for playing in handheld mode or on the Nintendo Switch Lite system.</string>
+    <string name="title">The Legend of Zelda: Skyward Sword HD</string>
+    <string name="release_date">July 16, 2021</string>
+    <string name="detailed_publisher">Nintendo</string>
+    <string name="detailed_platform">Nintendo Switch</string>
+    <string name="detailed_genre">Action, Adventure</string>
 
 </resources>

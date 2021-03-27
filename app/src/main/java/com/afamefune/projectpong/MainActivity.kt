@@ -40,10 +40,16 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
         var arrayList: ArrayList<VideoGame> = ArrayList()
 
         arrayList.add(VideoGame("Biomutant",R.mipmap.ic_launcher,"05-25-2021"))
+
         arrayList.add(VideoGame("Ratchet & Clank: Rift Apart",R.mipmap.ic_launcher,"06-11-2021"))
+
         arrayList.add(VideoGame("Monster Hunter Stories 2: Wings of Ruin",R.mipmap.ic_launcher,"07-09-2021"))
-        arrayList.add(VideoGame("The Legend of Zelda: Skyward Sword HD",R.mipmap.ic_launcher,"07-16-2021"))
+
+        arrayList.add(VideoGame("The Legend of Zelda: Skyward Sword HD",R.mipmap.ic_launcher,
+            "07-16-2021"))
+
         arrayList.add(VideoGame("Kena: Bridge of Spirits",R.mipmap.ic_launcher,"08-24-2021"))
+
         arrayList.add(VideoGame("Stray",R.mipmap.ic_launcher,"10-31-2021"))
 
 
