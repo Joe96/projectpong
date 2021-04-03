@@ -7,22 +7,23 @@ import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import com.afamefune.projectpong.R
-import com.afamefune.projectpong.viewmodel.VideoGame
+import com.afamefune.projectpong.viewmodel.Games
 
-class VideoGameAdapter (var context: Context, var arrayList: ArrayList<VideoGame>) : BaseAdapter () {
+class VideoGameAdapter (var context: Context, var arrayList: ArrayList<Games>) : BaseAdapter () {
+
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        var view : View = View.inflate(context, R.layout.game_list, null)
-        var icons : ImageView = view.findViewById(R.id.icon)
-        var titles : TextView = view.findViewById(R.id.title)
-        var dates : TextView = view.findViewById(R.id.date)
 
-        var listItem : VideoGame = arrayList.get(position)
+        val view : View = View.inflate(context, R.layout.game_list, null)
+        val titles : TextView = view.findViewById(R.id.name)
+        val icons : ImageView = view.findViewById(R.id.icon)
+        val dates : TextView = view.findViewById(R.id.released)
 
-        titles.text = listItem.title
+        val listItem : Games = arrayList.get(position)
+
+        titles.text = listItem.name
         icons.setImageResource(listItem.image!!)
-        dates.text = listItem.releaseDate
-
+        dates.text = listItem.released
 
         return view
     }

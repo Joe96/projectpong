@@ -28,6 +28,20 @@
 
     <string name="title_activity_detailed">DetailedActivity</string>
 
-    <string name="first_fragment_mock_data">Video game data coming soon, stay tuned!</string>
+    <string name="icon">Video game data coming soon, stay tuned!</string>
+    <string name="detailed_esrb_rating">E</string>
+    <string name="title">The Legend of Zelda: Skyward Sword HD</string>
+    <string name="release_date">July 16, 2021</string>
+    <string name="detailed_publisher">Nintendo</string>
+    <string name="detailed_platform">Nintendo Switch</string>
+    <string name="detailed_genre">Action, Adventure</string>
+
+    <string name="biomutant_description">BIOMUTANT® is an open-world, post-apocalyptic Kung-Fu fable RPG, with a unique martial arts styled combat system allowing you to mix melee, shooting and mutant ability action.</string>
+    <string name="ratchet_description">BLAST YOUR WAY THROUGH AN INTERDIMENSIONAL ADVENTURE The intergalactic adventurers are back with a bang. Help them stop a robotic emperor intent on conquering cross-dimensional worlds, with their own universe next in the firing line. - Blast your way home with an arsenal of outrageous weaponry. - Experience the shuffle of dimensional rifts and dynamic gameplay. - Explore never-before-seen planets and alternate dimension versions of old favorites.</string>
+    <string name="monsterhunter_description">Monster Hunter Stories 2: Wings of Ruin offers both RPG and Monster Hunter fans a unique new experience with a rich storyline featuring charming characters, challenging quests and friendly encounters with familiar monsters from the Monster Hunter series. Assuming the role of a young Monster Rider who can use a Kinship Stone to form strong bonds with monsters, players can gain experience and improve their skills to form deeper connections with these wonderful creatures. When ready, players can embark on memorable adventures filled with dramatic events and heartwarming friendships as the epic tale unfolds.</string>
+    <string name="zelda_description">The Legend of Zelda: Skyward Sword game soars onto Nintendo Switch!  Take to the skies, draw your sword, and experience the earliest story in the Legend of Zelda series. Join Link in his high-flying quest to save Zelda, a childhood friend who must confront her destiny. Soar between floating islands and descend to the treacherous surface world in this updated HD version of the Legend of Zelda: Skyward Sword.  Master realistic swordplay that matches your movements Swing your sword and angle your slashes to uncover and break through opponents’ defenses using intuitive motion controls. Link will match the angle of each strike you make with the Joy-Con controller, creating immersive swordplay that relies on strategy and accuracy. Movements feel smoother and more immediate thanks to the Nintendo Switch system’s increased processing power and HD graphics. Take advantage of the newly-added button only control scheme—perfect for playing in handheld mode or on the Nintendo Switch Lite system.</string>
+    <string name="kena_description">Kena Bridge of Spirits is an upcoming game from Ember Lab, a small studio with a background in animation and film. Highly stylised and looking like something out of a Pixar movie, , drops its cute exterior to show a protagonist capable of magic. In gameplay to follow, the heroine seems to use a staff to command elements and guide a band of small creatures.</string>
+    <string name="stray_description">Lost, alone, and separated from family, a stray cat must untangle an ancient mystery to escape a long-forgotten cybercity and find the way home.</string>
+
 
 </resources>
