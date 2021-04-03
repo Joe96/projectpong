@@ -10,18 +10,18 @@ import android.widget.AdapterView
 import android.widget.GridView
 import android.widget.Toast
 import com.afamefune.projectpong.adapters.VideoGameAdapter
-import com.afamefune.projectpong.viewmodel.VideoGame
-
+import com.afamefune.projectpong.viewmodel.Games
 
 class MainActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
 
-    private var arrayList:ArrayList<VideoGame> ? = null
+    private var arrayList:ArrayList<Games> ? = null
     private var gridView:GridView ? = null
     private var videoGameAdapter: VideoGameAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setSupportActionBar(findViewById(R.id.toolbar))
 
         // Inits gridview, array, and adapter
         gridView = findViewById(R.id.gridView)
@@ -32,25 +32,38 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
         gridView?.adapter = videoGameAdapter
         gridView?.onItemClickListener = this
 
+        //fetchJson()
+
     }
 
     // Populate array with mock data
-    private fun setDataList() : ArrayList<VideoGame> {
+    private fun setDataList() : ArrayList<Games> {
 
-        var arrayList: ArrayList<VideoGame> = ArrayList()
+        var arrayList: ArrayList<Games> = ArrayList()
 
-        arrayList.add(VideoGame("Biomutant",R.mipmap.ic_launcher,"05-25-2021"))
+        arrayList.add(Games("Biomutant",R.mipmap.ic_launcher,"05-25-2021",
+            getString(R.string.biomutant_description), "Experiment 101", "Action, RPG",
+            "PlayStation 4, PC, Xbox One", "NR"))
 
-        arrayList.add(VideoGame("Ratchet & Clank: Rift Apart",R.mipmap.ic_launcher,"06-11-2021"))
+        arrayList.add(Games("Ratchet & Clank: Rift Apart",R.mipmap.ic_launcher,"06-11-2021",
+             getString(R.string.ratchet_description), "Insomniac Games", "Action, Adventure",
+            "PlayStation 5", "NR"))
 
-        arrayList.add(VideoGame("Monster Hunter Stories 2: Wings of Ruin",R.mipmap.ic_launcher,"07-09-2021"))
+        arrayList.add(Games("Monster Hunter Stories 2: Wings of Ruin", R.mipmap.ic_launcher,"07-09-2021",
+            getString(R.string.monsterhunter_description), "Capcom", "RPG","Nintendo Switch, PC",
+            "NR"))
 
-        arrayList.add(VideoGame("The Legend of Zelda: Skyward Sword HD",R.mipmap.ic_launcher,
-            "07-16-2021"))
+        arrayList.add(Games("The Legend of Zelda: Skyward Sword HD",R.mipmap.ic_launcher, "07-16-2021",
+            getString(R.string.zelda_description), "Nintendo", "Action, Adventure", "Nintendo Switch",
+            "NR"))
 
-        arrayList.add(VideoGame("Kena: Bridge of Spirits",R.mipmap.ic_launcher,"08-24-2021"))
+        arrayList.add(Games("Kena: Bridge of Spirits",R.mipmap.ic_launcher,"08-24-2021",
+            getString(R.string.kena_description), "Ember Lab", "Action, Shooter, Adventure, Strategy",
+            "PlayStation 5, PlayStation 4, PC", "Everyone 10+"))
 
-        arrayList.add(VideoGame("Stray",R.mipmap.ic_launcher,"10-31-2021"))
+        arrayList.add(Games("Stray",R.mipmap.ic_launcher,"10-31-2021",
+            getString(R.string.stray_description ), "BlueTwelve", "Action, Adventure",
+            "PC, PlayStation 5", "NR"))
 
 
         return arrayList
@@ -58,12 +71,23 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
 
     // Sets click listener on the items in the gridview.
     override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-        var items: VideoGame = arrayList!!.get(position)
+        var items: Games = arrayList!!.get(position)
+
+
         // Sets toast message when item is clicked
-        Toast.makeText(applicationContext, items.title, Toast.LENGTH_SHORT).show()
+        Toast.makeText(applicationContext, items.name, Toast.LENGTH_SHORT).show()
+
         // Intent opens detailed activity when item is clicked
         val intent = Intent(this, DetailedActivity::class.java)
-        intent.putExtra("position", position)
+
+        intent.putExtra("name", items.name)
+        intent.putExtra("released", items.released)
+        intent.putExtra("platforms", items.platforms)
+        intent.putExtra("description", items.description)
+        intent.putExtra("developers", items.developers)
+        intent.putExtra("genres", items.genres)
+        intent.putExtra("esrb_rating", items.esrb_rating)
+
         this.startActivity(intent)
     }
 

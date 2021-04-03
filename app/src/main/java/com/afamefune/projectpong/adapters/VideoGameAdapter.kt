@@ -7,38 +7,23 @@ import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import com.afamefune.projectpong.R
-import com.afamefune.projectpong.viewmodel.VideoGame
+import com.afamefune.projectpong.viewmodel.Games
 
-class VideoGameAdapter (var context: Context, var arrayList: ArrayList<VideoGame>) : BaseAdapter () {
-
+class VideoGameAdapter (var context: Context, var arrayList: ArrayList<Games>) : BaseAdapter () {
 
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
 
         val view : View = View.inflate(context, R.layout.game_list, null)
-        val titles : TextView = view.findViewById(R.id.title)
+        val titles : TextView = view.findViewById(R.id.name)
         val icons : ImageView = view.findViewById(R.id.icon)
-        val dates : TextView = view.findViewById(R.id.release_date)
+        val dates : TextView = view.findViewById(R.id.released)
 
+        val listItem : Games = arrayList.get(position)
 
-        /*val about : TextView = detailedView.findViewById(R.id.detailed_about)
-        val genre : TextView = detailedView.findViewById(R.id.detailed_genre)
-        val publishers : TextView = detailedView.findViewById(R.id.detailed_publisher)
-        val platforms : TextView = detailedView.findViewById(R.id.detailed_platform)
-        val esrb_ratings : TextView = detailedView.findViewById(R.id.detailed_esrb_rating)
-         */
-        val listItem : VideoGame = arrayList.get(position)
-
-        titles.text = listItem.title
+        titles.text = listItem.name
         icons.setImageResource(listItem.image!!)
-        dates.text = listItem.releaseDate
-        /*about.text = listItem.about
-        genre.text = listItem.genre
-        publishers.text = listItem.publisher
-        platforms.text = listItem.platform
-        esrb_ratings.text = listItem.ersb_rating
-         */
-
+        dates.text = listItem.released
 
         return view
     }
